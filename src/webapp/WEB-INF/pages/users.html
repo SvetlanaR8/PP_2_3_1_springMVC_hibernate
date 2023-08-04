@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+<div>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>LastName</th>
+        </tr>
+        <tr th:each = "user:${users}">
+            <td th:utext="${user.getId()}"></td>
+            <td th:utext="${user.getFirstName}"></td>
+            <td th:utext="${user.getLastName}"></td>
+        </tr>
+    </table>
+</div>
+<br/>
+<hr/>
+<a href="/new">Add new user</a>
+
+</body>
+</html>
