@@ -11,17 +11,31 @@
             <th>ID</th>
             <th>Name</th>
             <th>LastName</th>
+            <th>Action</th>
         </tr>
         <tr th:each = "user:${users}">
             <td th:utext="${user.getId()}"></td>
             <td th:utext="${user.getFirstName}"></td>
             <td th:utext="${user.getLastName}"></td>
+            <td>
+                <a th:href="@{/{id}(id=${user.getId()})}">Show</a>
+            </td>
         </tr>
     </table>
 </div>
 <br/>
 <hr/>
 <a href="/new">Add new user</a>
+
+<br/>
+<hr/>
+<form th:method="GET" th:action="@{/show}">
+    <label for="id">user ID for details</label>
+    <input id="id" name="id" type="text"/>
+    <br/>
+    <input type="submit" value="Show user"/>
+</form>
+
 
 </body>
 </html>

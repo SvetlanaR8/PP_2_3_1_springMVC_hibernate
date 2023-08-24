@@ -29,6 +29,12 @@ public class UsersController {
         model.addAttribute("user", userService.show(id));
         return "show";
     }
+
+    @GetMapping("/show")
+    public String show_by_id(@RequestParam("id") Long id, Model model) {
+        model.addAttribute("user", userService.show(id));
+        return "show";
+    }
     @GetMapping("/new")
     public String newUser(@ModelAttribute("user") User user) {
         return "new";
